@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function TodoList() {
-
+    
     const [todo, setTodo] = useState({
         description: '',
         date: ''
@@ -21,6 +21,15 @@ export default function TodoList() {
 
     }
 
+    const deleteTodo = (index) => {
+
+        const update = todos.filter((todo, i) => i !== index)
+
+        setTodos(update);
+
+    }
+
+    
     return (
 
         <>
@@ -43,7 +52,8 @@ export default function TodoList() {
                         <td>
                                     {todo.description+" "}
                                     {todo.date}
-                        </td>
+                                </td>
+                                <td><button type="button" onClick= {() => deleteTodo(index)} >Delete</button></td>
                         </tr>
                     )
                     }
