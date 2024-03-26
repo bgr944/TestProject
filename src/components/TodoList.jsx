@@ -28,9 +28,11 @@ export default function TodoList() {
     
     const handleClick = () => {
         
-        if (todo.description && todo.priority &&todo.date) {
+        if (todo.description && todo.priority &&todo.date !== '') {
             setTodos([...todos, todo]);
-            setTodo({});
+            setTodo({description: '',
+            priority: '',
+            date: ''});
         }
         else {
         alert("Write description")
@@ -40,7 +42,7 @@ export default function TodoList() {
 
   const yourChangeDateFunc = (date) => {
     let str = date.toISOString()
-    setTodo({...todo, date: str })
+    setTodo({...todo, date})
     }
 
 
@@ -71,12 +73,12 @@ export default function TodoList() {
             <TextField 
       label="Description" 
       onChange={e => setTodo({...todo, description: e.target.value })} 
-      value={todo.desc} />
+      value={todo.description} />
     <TextField
       label="Priority" 
       onChange={e => setTodo({...todo, priority: e.target.value })} 
       value={todo.priority} /> 
-<DatePicker label='Date Picker' value={todo.date} onChange={date => yourChangeDateFunc(date)} />
+<DatePicker label='Date Picker' value={todo.date} onChange={date => yourChangeDateFunc(date)}  />
             <Button onClick={handleClick}>Add</Button>
           <Button onClick={handleDelete}>Delete</Button>
             </Stack>
