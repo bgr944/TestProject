@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'; // Import Router components
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import TodoList from './components/TodoList';
 import Home from './components/Home';
 import './App.css';
